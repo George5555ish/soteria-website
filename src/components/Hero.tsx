@@ -76,7 +76,7 @@ const Hero = () => {
           Welcome Home
         </h1>
         <p className="text-xl md:text-2xl lg:text-3xl text-gray-100 mb-4 max-w-3xl text-shadow">
-          Soteria Church
+        Soteria Bible Church London
         </p>
         <p className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl text-shadow">
           A community of faith, hope, and love where everyone belongs

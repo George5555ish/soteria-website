@@ -17,11 +17,30 @@ const Navigation = () => {
   const navLinks = [
     { name: 'Home', href: '#' },
     { name: 'About', href: '#about' },
-    { name: 'Ministries', href: '#ministries' },
     { name: 'Events', href: '#events' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'Contact', href: '#contact' },
   ]
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      const element = document.querySelector(href)
+      if (element) {
+        const offset = 80 // Account for fixed navbar
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - offset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        })
+      }
+    }
+    setIsMobileMenuOpen(false)
+  }
 
   return (
     <nav
@@ -36,11 +55,12 @@ const Navigation = () => {
           {/* Logo */}
           <a
             href="#"
-            className={`text-2xl font-serif font-bold transition-colors ${
+            onClick={(e) => handleNavClick(e, '#')}
+            className={`text-2xl font-serif font-bold transition-colors cursor-pointer ${
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}
           >
-            Soteria Church
+            Soteria Bible Church
           </a>
 
           {/* Desktop Navigation */}
@@ -49,7 +69,8 @@ const Navigation = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`font-medium transition-colors ${
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`font-medium transition-colors cursor-pointer ${
                   isScrolled
                     ? 'text-gray-700 hover:text-primary-600'
                     : 'text-white hover:text-primary-300'
@@ -93,8 +114,8 @@ const Navigation = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-700 hover:text-primary-600 font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="text-gray-700 hover:text-primary-600 font-medium cursor-pointer"
                 >
                   {link.name}
                 </a>

@@ -63,10 +63,9 @@ const ServiceTimes = () => {
                     Sunday Services
                   </h3>
                   <div className="space-y-2 text-gray-700">
-                    <p className="font-semibold">First Service: 9:00 AM</p>
-                    <p className="font-semibold">Second Service: 11:00 AM</p>
+                    <p className="font-semibold">Sunday Service: 11:00 AM</p>
                     <p className="text-sm text-gray-600 mt-2">
-                      Children's ministry available during all services
+                      Children's ministry is available
                     </p>
                   </div>
                 </div>
@@ -78,7 +77,6 @@ const ServiceTimes = () => {
                 </h4>
                 <div className="space-y-2 text-gray-700">
                   <p>Wednesday Bible Study: 6:30 PM</p>
-                  <p>Friday Youth Night: 7:00 PM</p>
                 </div>
               </div>
             </div>
@@ -90,8 +88,8 @@ const ServiceTimes = () => {
                 <div>
                   <p className="font-semibold text-gray-900">Address</p>
                   <p className="text-gray-600">
-                    123 Church Street<br />
-                    Cityville, ST 12345
+                    Ashland Burghley<br />
+                    Tufnell Park London
                   </p>
                 </div>
               </div>
@@ -100,7 +98,7 @@ const ServiceTimes = () => {
                 <Phone className="w-5 h-5 text-primary-600 mt-1 mr-3" />
                 <div>
                   <p className="font-semibold text-gray-900">Phone</p>
-                  <p className="text-gray-600">(555) 123-4567</p>
+                  <p className="text-gray-600">07380 432206</p>
                 </div>
               </div>
 
@@ -108,7 +106,7 @@ const ServiceTimes = () => {
                 <Mail className="w-5 h-5 text-primary-600 mt-1 mr-3" />
                 <div>
                   <p className="font-semibold text-gray-900">Email</p>
-                  <p className="text-gray-600">info@soteriachurch.org</p>
+                  <p className="text-gray-600">ukparish@soteriabiblechurch.org</p>
                 </div>
               </div>
             </div>
@@ -123,16 +121,16 @@ const ServiceTimes = () => {
           {/* Map */}
           <div ref={mapRef} className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-              {/* Placeholder for map - Replace with actual Google Maps embed */}
+              {/* Google Maps embed for Ashland Burghley, Tufnell Park, London */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2176046179505!2d-73.98731492346667!3d40.75797033522475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1703123456789!5m2!1sen!2sus"
+                src="https://www.google.com/maps?q=Ashland+Burghley+Tufnell+Park+London&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Church location map"
+                title="Church location map - Ashland Burghley, Tufnell Park, London"
               ></iframe>
             </div>
             {/* Decorative element */}

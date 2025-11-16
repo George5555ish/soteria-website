@@ -1,4 +1,4 @@
-# Soteria Church Website
+# Soteria Bible Church Website
 
 A modern, visually stunning church website built with React, TypeScript, GSAP, and Tailwind CSS. Features smooth animations, scroll-based interactions, and a memorable loading experience.
 
@@ -147,7 +147,7 @@ soteria-website/
 
 ## 📝 License
 
-This project is created for Soteria Church. Feel free to customize and use it for your own church or organization.
+This project is created for Soteria Bible Church. Feel free to customize and use it for your own church or organization.
 
 ## 🙏 Credits
 
@@ -172,5 +172,5 @@ For questions or support, contact: info@soteriachurch.org
 
 ---
 
-Built with ❤️ for the Soteria Church community
+Built with ❤️ for the Soteria Bible Church community
 

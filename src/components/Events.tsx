@@ -14,48 +14,44 @@ gsap.registerPlugin(ScrollTrigger)
 
 const events = [
   {
-    title: 'Sunday Worship Service',
-    date: 'Every Sunday',
-    time: '9:00 AM & 11:00 AM',
+    title: 'Homeless Outreach',
+    date: 'Monthly',
+    time: '10:00 AM',
+    location: 'Various Locations',
+    image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=2073&auto=format&fit=crop',
+    description: 'Serve our community through food distribution, shelter support, and compassionate care.',
+  },
+  {
+    title: 'Leadership Conference',
+    date: 'TBA',
+    time: 'All Day',
     location: 'Main Sanctuary',
     image: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=2070&auto=format&fit=crop',
-    description: 'Join us for inspiring worship, powerful messages, and fellowship.',
+    description: 'Join us for inspiring sessions on leadership, faith, and community building.',
   },
   {
-    title: 'Youth Night',
-    date: 'Friday, October 25',
-    time: '7:00 PM',
-    location: 'Youth Center',
+    title: 'Convention',
+    date: 'TBA',
+    time: 'All Day',
+    location: 'Main Sanctuary',
     image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop',
-    description: 'Games, worship, and fellowship for middle and high school students.',
+    description: 'Annual church convention with worship, teaching, and fellowship.',
   },
   {
-    title: 'Community Outreach',
-    date: 'Saturday, October 28',
-    time: '10:00 AM',
-    location: 'Downtown Area',
-    image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=2073&auto=format&fit=crop',
-    description: 'Serve our community through food distribution and prayer.',
-  },
-  {
-    title: 'Women\'s Bible Study',
-    date: 'Wednesdays',
-    time: '6:30 PM',
-    location: 'Fellowship Hall',
-    image: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=2049&auto=format&fit=crop',
-    description: 'Dive deep into Scripture with fellow sisters in faith.',
-  },
-  {
-    title: 'Fall Festival',
-    date: 'Saturday, November 2',
-    time: '2:00 PM',
-    location: 'Church Grounds',
-    image: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=2031&auto=format&fit=crop',
-    description: 'Family-friendly activities, food, and fun for all ages.',
+    title: 'Sunday Services',
+    date: 'Every Sunday',
+    time: '11:00 AM',
+    location: 'Main Sanctuary',
+    image: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=2070&auto=format&fit=crop',
+    description: 'Join us for inspiring worship, powerful messages, and fellowship. Children\'s ministry available.',
   },
 ]
 
-const Events = () => {
+interface EventsProps {
+  id?: string
+}
+
+const Events = ({ id }: EventsProps) => {
   const sectionRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLDivElement>(null)
 
@@ -78,6 +74,7 @@ const Events = () => {
 
   return (
     <section
+      id={id}
       ref={sectionRef}
       className="py-24 px-4 md:px-8 lg:px-16 bg-secondary-900"
     >

@@ -1,7 +1,11 @@
 import { Facebook, Instagram, Twitter, Youtube, ChevronUp } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
-const Footer = () => {
+interface FooterProps {
+  id?: string
+}
+
+const Footer = ({ id }: FooterProps) => {
   const [showBackToTop, setShowBackToTop] = useState(false)
 
   useEffect(() => {
@@ -20,15 +24,34 @@ const Footer = () => {
     })
   }
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      const element = document.querySelector(href)
+      if (element) {
+        const offset = 80 // Account for fixed navbar
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - offset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        })
+      }
+    }
+  }
+
   return (
     <>
-      <footer className="bg-gray-900 text-gray-300">
+      <footer id={id} className="bg-gray-900 text-gray-300">
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             {/* About Column */}
             <div>
               <h3 className="text-2xl font-serif text-white mb-4">
-                Soteria Church
+              Soteria Bible Church
               </h3>
               <p className="text-gray-400 leading-relaxed mb-6">
                 A community of faith, hope, and love where everyone belongs.
@@ -73,27 +96,27 @@ const Footer = () => {
               </h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="#" className="hover:text-primary-400 transition-colors">
+                  <a href="#about" onClick={(e) => handleLinkClick(e, '#about')} className="hover:text-primary-400 transition-colors cursor-pointer">
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary-400 transition-colors">
-                    Ministries
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary-400 transition-colors">
+                  <a href="#events" onClick={(e) => handleLinkClick(e, '#events')} className="hover:text-primary-400 transition-colors cursor-pointer">
                     Events
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary-400 transition-colors">
-                    Sermons
+                  <a href="#gallery" onClick={(e) => handleLinkClick(e, '#gallery')} className="hover:text-primary-400 transition-colors cursor-pointer">
+                    Gallery
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary-400 transition-colors">
+                  <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className="hover:text-primary-400 transition-colors cursor-pointer">
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={(e) => handleLinkClick(e, '#')} className="hover:text-primary-400 transition-colors cursor-pointer">
                     Give
                   </a>
                 </li>
@@ -107,27 +130,22 @@ const Footer = () => {
               </h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="#" className="hover:text-primary-400 transition-colors">
+                  <a href="#" onClick={(e) => handleLinkClick(e, '#')} className="hover:text-primary-400 transition-colors cursor-pointer">
                     Prayer Requests
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary-400 transition-colors">
+                  <a href="#" onClick={(e) => handleLinkClick(e, '#')} className="hover:text-primary-400 transition-colors cursor-pointer">
                     Bible Study
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary-400 transition-colors">
-                    Small Groups
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary-400 transition-colors">
+                  <a href="#" onClick={(e) => handleLinkClick(e, '#')} className="hover:text-primary-400 transition-colors cursor-pointer">
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary-400 transition-colors">
+                  <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className="hover:text-primary-400 transition-colors cursor-pointer">
                     Contact Us
                   </a>
                 </li>
@@ -162,7 +180,7 @@ const Footer = () => {
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-gray-500 text-sm">
-                © {new Date().getFullYear()} Soteria Church. All rights reserved.
+                © {new Date().getFullYear()} Soteria Bible Church. All rights reserved.
               </p>
               <div className="flex space-x-6 text-sm">
                 <a href="#" className="text-gray-500 hover:text-primary-400 transition-colors">

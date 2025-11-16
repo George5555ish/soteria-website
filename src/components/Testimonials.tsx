@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const testimonials = [
   {
-    quote: "Soteria Church has been a true blessing to our family. The warmth and genuine love we've experienced here has deepened our faith and given us a community we can truly call home.",
+    quote: "Soteria Bible Church has been a true blessing to our family. The warmth and genuine love we've experienced here has deepened our faith and given us a community we can truly call home.",
     name: "Sarah Johnson",
     role: "Member since 2018",
   },
@@ -70,7 +70,7 @@ const Testimonials = () => {
             Stories of Faith
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Hear from members of our community about their journey with Soteria Church
+            Hear from members of our community about their journey with Soteria Bible Church
           </p>
         </div>
 

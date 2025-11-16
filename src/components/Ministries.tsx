@@ -1,25 +1,11 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Heart, Users, BookOpen, Music, Baby, HandHeart } from 'lucide-react'
+import { BookOpen, HandHeart, Users } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const ministries = [
-  {
-    icon: Heart,
-    title: 'Worship & Prayer',
-    description: 'Experience powerful worship and join us in prayer as we seek God together.',
-    color: 'text-rose-600',
-    bgColor: 'bg-rose-100',
-  },
-  {
-    icon: Users,
-    title: 'Community Groups',
-    description: 'Connect with others through small groups focused on fellowship and spiritual growth.',
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-100',
-  },
   {
     icon: BookOpen,
     title: 'Bible Study',
@@ -28,25 +14,18 @@ const ministries = [
     bgColor: 'bg-amber-100',
   },
   {
-    icon: Music,
+    icon: HandHeart,
+    title: 'Homeless Outreach',
+    description: 'Serve our local community through food distribution, shelter support, and compassionate care for those in need.',
+    color: 'text-indigo-600',
+    bgColor: 'bg-indigo-100',
+  },
+  {
+    icon: Users,
     title: 'Youth Ministry',
     description: 'Engaging programs designed to help young people grow in faith and friendship.',
     color: 'text-purple-600',
     bgColor: 'bg-purple-100',
-  },
-  {
-    icon: Baby,
-    title: "Children's Ministry",
-    description: 'Age-appropriate teaching and activities to help children discover God\'s love.',
-    color: 'text-green-600',
-    bgColor: 'bg-green-100',
-  },
-  {
-    icon: HandHeart,
-    title: 'Outreach & Missions',
-    description: 'Serve our local community and support global missions to spread the Gospel.',
-    color: 'text-indigo-600',
-    bgColor: 'bg-indigo-100',
   },
 ]
 

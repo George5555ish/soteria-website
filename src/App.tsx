@@ -28,13 +28,13 @@ function App() {
       <div className={`transition-opacity duration-500 ${loading ? 'opacity-0' : 'opacity-100'}`}>
         <Navigation />
         <Hero />
-        <About />
+        <About id="about" />
         <Ministries />
-        <Events />
-        <Gallery />
+        <Events id="events" />
+        <Gallery id="gallery" />
         <Testimonials />
         <ServiceTimes />
-        <Footer />
+        <Footer id="contact" />
       </div>
     </>
   )

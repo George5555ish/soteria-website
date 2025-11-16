@@ -4,7 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const About = () => {
+interface AboutProps {
+  id?: string
+}
+
+const About = ({ id }: AboutProps) => {
   const sectionRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
@@ -56,6 +60,7 @@ const About = () => {
 
   return (
     <section
+      id={id}
       ref={sectionRef}
       className="py-24 px-4 md:px-8 lg:px-16 bg-white"
     >
@@ -87,7 +92,7 @@ const About = () => {
 
             <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
               <p className="animate-item">
-                For over 50 years, Soteria Church has been a beacon of hope and faith in our community. 
+                For over 50 years, Soteria Bible Church has been a beacon of hope and faith in our community. 
                 Our name, derived from the Greek word for "salvation," reflects our mission to bring 
                 God's love and grace to all who enter our doors.
               </p>

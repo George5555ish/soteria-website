@@ -38,7 +38,11 @@ const images = [
   },
 ]
 
-const Gallery = () => {
+interface GalleryProps {
+  id?: string
+}
+
+const Gallery = ({ id }: GalleryProps) => {
   const sectionRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLDivElement>(null)
   const galleryRef = useRef<HTMLDivElement>(null)
@@ -94,6 +98,7 @@ const Gallery = () => {
   return (
     <>
       <section
+        id={id}
         ref={sectionRef}
         className="py-24 px-4 md:px-8 lg:px-16 bg-white"
       >
